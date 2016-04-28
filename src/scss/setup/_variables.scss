@@ -1,0 +1,39 @@
+/* ====================================================================================
+ *  Project: Single Page Website
+ *  Author: Andrzej Kałowski
+ *  $id: variables.scss
+ *  =================================================================================== */
+
+/* Color definitions ================================================================== */
+
+/* Main colors */
+$base-color: rgba(172,182,67,1);
+$leading-color: darken($base-color, 8%);
+$transparent-leading-color: darken(rgba(172,182,67,.5), 8%);
+$bright-leading-color: lighten($leading-color, 20%);
+$dark-leading-color: darken($leading-color, 20%);
+$main-color: #888;
+$bright-color: #d4d4d4;
+$very-bright-color: #fff;
+$shadow-color: #7e6c06;
+$dark-color: #8a854e;
+$very-dark-color: #000;
+$main-header-color: #444444;
+
+/* Background colors */
+$main-background-color: $very-bright-color;
+$other-background-color: #eee;
+$footer-background-color: #43444d;
+$copyright-background-color: lighten($footer-background-color, 10%);
+
+/* Font definitions =================================================================== */
+$primary-font: 'Lato', Helvetica, sans-serif !default;
+$secondary-font: 'Oswald', Helvetica, sans-serif !default;
+$main-font-size: .625em;
+$main-line-height: .625em;
+
+/* Z-indexes ========================================================================== */
+$z-index-base: 1 !default;
+
+/* Others ============================================================================= */
+$main-paragraph-margin: 0 0 16px;
