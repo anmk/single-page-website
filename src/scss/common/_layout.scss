@@ -1,0 +1,788 @@
+/* ====================================================================================
+ *  Project: Single Page Website
+ *  Author: Andrzej Kałowski
+ *  $id: layout.scss
+ *  =================================================================================== */
+
+/* Common - Layout ==================================================================== */
+
+/* General ============================================================================ */
+
+#main-container {
+  @include desktop {padding-top: 88px;}
+  @include phone {padding-top: 52px;}
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  clear: both;
+  padding: 0 15px;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.section-title {
+  font-weight: bold;
+  text-align: center;
+  line-height: 0;
+  margin-top: 4em;
+  margin-bottom: 1em;
+}
+
+.leading-dotted-horizontal-line {
+  padding-top: 2px;
+  @include dotted-horizontal-line();
+}
+
+/* Menu =============================================================================== */
+
+#header-menu {
+  font-family: 'Oswald';
+  @include desktop {height: 88px;}
+  @include phone {height: 52px;}
+  @include style-border-bottom(1px,$dark-leading-color);
+  @include shadow-box(0 1px 3px 0 $dark-leading-color);
+}
+
+#nav-top {
+  display: block;
+  @include phone {display: none;}
+}
+
+.slicknav_menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  @include desktop {display: none;}
+  @include style-border-bottom(1px,$dark-leading-color);
+  @include shadow-box(0 1px 3px 0 $dark-leading-color);
+}
+
+.nav-bar-top {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1050;
+  background-color: $leading-color;
+  font-size: 4em;
+  padding-top: 44px;
+}
+
+.nav-menu {
+  @include vertical-align();
+  float: right;
+}
+
+.nav-menu > ul {
+  list-style-type: none;
+}
+
+.nav-menu > ul > li {
+  float: left;
+  display: block;
+}
+
+.nav-menu .nav-ul > li > a {
+  color: $very-bright-color;
+  border: 1px solid transparent;
+  background-color: $leading-color;
+  padding: 10px 15px;
+  margin-left: 5px;
+  text-decoration: none;
+}
+
+.nav-menu .nav-ul > li > a:hover,
+.nav-menu .nav-ul > li > a:focus {
+  color: $dark-leading-color;
+  border: 1px solid $dark-leading-color;
+  background-color: transparent;
+  padding: 10px 15px;
+  line-height: .5em;
+  border-radius: 4px;
+  @include transition(0.5s);
+}
+
+.nav-menu .nav-ul > .active > a,
+.nav-menu .nav-ul > .active > a:hover,
+.nav-menu .nav-ul > .active > a:focus {
+  color: $dark-leading-color;
+  border: 1px solid $dark-leading-color;
+  background-color: $bright-leading-color;
+  padding: 10px 15px;
+  line-height: .5em;
+  border-radius: 4px;
+}
+
+/* Top Slider - Bx Slider ============================================================= */
+
+ul.bxslider {
+  margin: 0;
+  padding: 0;
+}
+
+@include phone {
+  .bxslider > li > div:nth-child(1n) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 309px;
+    width: 100%;
+  }
+  .bxslider > li > div:nth-child(1n):after {
+    @include light-filter();
+    z-index: 0;
+  }
+}
+
+@include desktop {
+  .bxslider > li > div:nth-child(1n) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 580px;
+    width: 100%;
+  }
+  .bxslider > li > div:nth-child(1n):after {
+    @include light-filter();
+    z-index: 0;
+  }
+}
+
+@include phone {
+
+  .bxslider > li > .top-slide-01 {
+    background-image: url('../img/bx_slider/photos/sunset-mob.jpg');
+  }
+  
+  .bxslider > li > .top-slide-02 {
+    background-image: url('../img/bx_slider/photos/road-mob.jpg');
+  }
+
+  .bxslider > li > .top-slide-03 {
+    background-image: url('../img/bx_slider/photos/clouds-mob.jpg');
+  }
+
+  .bxslider > li > .top-slide-04 {
+    background-image: url('../img/bx_slider/photos/tour-mob.jpg');
+  }
+
+  .bxslider > li > .top-slide-05 {
+    background-image: url('../img/bx_slider/photos/seashore-mob.jpg');
+  }
+
+  .bxslider > li > .top-slide-06 {
+    background-image: url('../img/bx_slider/photos/landscape-mob.jpg');
+  }
+
+  .bxslider > li > .top-slide-07 {
+    background-image: url('../img/bx_slider/photos/mountains-mob.jpg'); 
+  }
+
+  .bxslider > li > .top-slide-08 {
+    background-image: url('../img/bx_slider/photos/bird-mob.jpg');
+  }
+
+  .bxslider > li > .top-slide-09 {
+    background-image: url('../img/bx_slider/photos/leopard-mob.jpg');
+  }
+
+}
+
+@include desktop {
+
+  .bxslider > li > .top-slide-01 {
+    background-image: -webkit-image-set(url('../img/bx_slider/photos/sunset.jpg') 1x, url('../img/bx_slider/photos/sunset2x.jpg') 2x);
+    background-image: url('../img/bx_slider/photos/sunset.jpg');
+  }
+  
+  .bxslider > li > .top-slide-02 {
+    background-image: -webkit-image-set(url('../img/bx_slider/photos/road.jpg') 1x, url('../img/bx_slider/photos/road2x.jpg') 2x);
+    background-image: url('../img/bx_slider/photos/road.jpg');
+  }
+  
+  .bxslider > li > .top-slide-03 {
+    background-image: -webkit-image-set(url('../img/bx_slider/photos/clouds.jpg') 1x, url('../img/bx_slider/photos/clouds2x.jpg') 2x);
+    background-image: url('../img/bx_slider/photos/clouds.jpg');
+  }
+
+  .bxslider > li > .top-slide-04 {
+    background-image: -webkit-image-set(url('../img/bx_slider/photos/tour.jpg') 1x, url('../img/bx_slider/photos/tour2x.jpg') 2x);
+    background-image: url('../img/bx_slider/photos/tour.jpg');
+  }
+
+  .bxslider > li > .top-slide-05 {
+    background-image: -webkit-image-set(url('../img/bx_slider/photos/seashore.jpg') 1x, url('../img/bx_slider/photos/seashore2x.jpg') 2x);
+    background-image: url('../img/bx_slider/photos/seashore.jpg');
+  }
+
+  .bxslider > li > .top-slide-06 {
+    background-image: -webkit-image-set(url('../img/bx_slider/photos/landscape.jpg') 1x, url('../img/bx_slider/photos/landscape2x.jpg') 2x);
+    background-image: url('../img/bx_slider/photos/landscape.jpg');
+  }
+
+  .bxslider > li > .top-slide-07 {
+    background-image: -webkit-image-set(url('../img/bx_slider/photos/mountains.jpg') 1x, url('../img/bx_slider/photos/mountains2x.jpg') 2x);
+    background-image: url('../img/bx_slider/photos/mountains.jpg');
+  }
+
+  .bxslider > li > .top-slide-08 {
+    background-image: -webkit-image-set(url('../img/bx_slider/photos/bird.jpg') 1x, url('../img/bx_slider/photos/bird2x.jpg') 2x);
+    background-image: url('../img/bx_slider/photos/bird.jpg');
+  }
+
+  .bxslider > li > .top-slide-09 {
+    background-image: -webkit-image-set(url('../img/bx_slider/photos/leopard.jpg') 1x, url('../img/bx_slider/photos/leopard2x.jpg') 2x);
+    background-image: url('../img/bx_slider/photos/leopard.jpg');
+  }
+
+}
+
+.top-slide-box {
+  max-width: 1200px;
+  margin: 0 auto;
+  clear: both;
+  padding: 0 15px;
+}
+
+/* Slide content */
+
+.top-slide-inner {
+  max-width: 90%;
+  margin: auto auto;
+  color: $main-background-color;
+  position: relative;
+  z-index: $z-index-base;
+}
+
+@include phone {
+  .top-slide-inner {
+    height: 380px;
+  }
+}
+
+@include desktop {
+  .top-slide-inner {
+    height: 580px;
+  }
+}
+
+.top-slide-inner h1 {
+  font-weight: bold;
+  color: $bright-leading-color;
+  @include shadow-text();
+  @include absolute-position(30%, 0, 60%, 0);
+}
+
+@include phone {
+  .top-slide-inner h1 {
+    font-size: 3em;
+    line-height: 2.4em;
+  }
+}
+
+@include desktop {
+  .top-slide-inner h1 {
+    font-size: 6em;
+    line-height: 4.8em;
+  }
+}
+
+.top-slide-inner > span > h1 {
+   @include absolute-position(70%, 0, 30%, 0);
+}
+
+.top-slide-inner h3 {
+  font-weight: bold;
+  color: $bright-leading-color;
+  @include shadow-text();
+  @include absolute-position(60%, 0, 30%, 0);
+}
+
+@include phone {
+  .top-slide-inner h3 {
+    font-size: 2em;
+    line-height: 1.6em;
+  }
+}
+
+@include desktop {
+  .top-slide-inner h3 {
+    font-size: 3em;
+    line-height: 2.4em;
+  }
+}
+
+.top-slide-inner > span > h3 {
+  @include absolute-position(40%, 0, 60%, 0);
+}
+
+.top-slide-inner a {
+  margin-top: 5%;
+  border: 2px solid $dark-leading-color;
+  font-size: 2.4em;
+  font-weight: normal;
+  color: $main-background-color;
+  float: right;
+  @include shadow-text();
+  @include border-radius-mix();
+  @include button-filter();
+  @include transition(0.3s);
+  z-index: $z-index-base;
+}
+
+@include phone {
+  .top-slide-inner a {
+    padding: 2.5em 2.3em;
+  }
+}
+
+@include desktop {
+  .top-slide-inner a {
+    padding: 3.5em 3.3em;
+
+  }
+}
+
+.top-slide-inner a:hover {
+  background: $leading-color;
+  color: $dark-leading-color;
+  @include shadow-text(0,0,0,$shadow-color);
+}
+
+/* Services =========================================================================== */
+
+.business-area {
+  padding-top: 16em;
+  overflow: auto;
+}
+
+.drawing {
+  margin-bottom: 4em;
+  text-align: center;
+}
+
+.drawing > span {
+  display: inline-block;
+  background: $other-background-color;
+  margin-bottom: 2em;
+  @include size(12em, 12em);
+  @include border-radius-mix();
+  @include transition(0.7s);
+}
+
+.drawing > span:hover {
+  background: $leading-color;
+}
+
+.drawing > span:hover > i {
+  color: $very-bright-color;
+}
+
+.drawing > span > i {
+  color: $leading-color;
+  font-size: 5em;
+  line-height: 2.5em;
+}
+
+.drawing > h3 {
+  font-weight: bold;
+  line-height: 1.5em;
+}
+
+.drawing > p {
+  font-weight: normal;
+}
+
+/* Partnership ======================================================================== */
+
+#partnership {
+  text-align: center;
+  line-height: 0;
+}
+
+.partner-header {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.partner-description {
+  list-style-type: none;
+  margin-top: 1.5em;
+  padding-left: 0;
+  font-size: 2.5em;
+  text-align: center;
+  font-weight: normal;
+}
+
+/* Parallax =========================================================================== */
+
+@include down-phone {
+  .parallax {
+    @include paralax-params();
+  }
+  .parallax .inside-parallax {
+    @include inside-paralax-params();
+    height: 530px;
+  }
+}
+
+@include only-phone {
+  .parallax {
+    @include paralax-params();
+    .right {
+      float: right;
+    }
+  }
+  .parallax .inside-parallax {
+    @include inside-paralax-params();
+    height: 590px;
+  }
+}
+
+@include desktop {
+  .parallax {
+    @include paralax-params();
+  }
+  .parallax .inside-parallax {
+    @include inside-paralax-params();
+    height: 320px;
+  }
+}
+
+.brands {
+  display: inline-block;
+  padding-top: 9em;
+  z-index: $z-index-base;
+}
+
+.second-line-brands {
+  display: inline-block;
+  padding-top: 18em;
+  z-index: $z-index-base;
+}
+
+/* Our offices ======================================================================== */
+
+#offices {
+  padding-bottom: 2em;
+  text-align: center;
+}
+
+#offices .thumbnail {
+  font-family: 'Oswald';
+  background-color: $leading-color;
+  @include border-radius-mix(10px);
+  padding: 4em;
+  margin-bottom: 4em;
+}
+
+#offices .thumbnail h2 {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: $dark-leading-color;
+  font-weight: bold;
+  line-height: 1.5em;
+}
+
+#offices .thumbnail p {
+  color: $dark-leading-color;
+}
+
+#offices .thumbnail img {
+ margin: 0 auto;
+}
+
+.offices-header {
+  margin-bottom: 2em;
+}
+
+/* Accommodation - Second Parallax===================================================== */
+
+#accommodation {
+  text-align: center;
+}
+
+.accommo-contents {
+  text-align: center;
+}
+
+.second-brands {
+  text-align: center;
+  z-index: $z-index-base;
+}
+
+@include phone {
+  .fit img {
+    max-width: 50%;
+    @include translate-3d(0%,100%,0%);
+  }
+}
+
+@include desktop {
+  .fit img {
+    max-width: 30%;
+    @include translate-3d(0%,15%,0%);
+  }
+}
+
+@include phone {
+  .second-parallax {
+    @include second-paralax-params();
+  }  
+  .second-parallax .inside-second-parallax {
+    @include inside-paralax-params(); 
+    height: 390px;
+  }
+}
+
+@include only-tablet {
+  .second-parallax {
+    @include second-paralax-params();
+  }
+  .second-parallax .inside-second-parallax {
+    @include inside-paralax-params();
+    height: 280px;
+  }
+}
+
+@include only-desktop {
+  .second-parallax {
+    @include second-paralax-params();
+  }  
+  .second-parallax .inside-second-parallax {
+    @include inside-paralax-params();
+    height: 370px;
+  }
+}
+
+@include up-desktop {
+  .second-parallax {
+    @include second-paralax-params();
+  }
+  .second-parallax .inside-second-parallax {
+    @include inside-paralax-params();
+    height: 450px;
+  }
+}
+
+/* Active recreation - Slider Owl-carousel ============================================ */
+
+.active-recreation {
+  text-align: center;
+}
+
+.recreation-item {
+  width: 100%;
+}
+
+.recreation-item img {
+  width: 100%;
+  cursor: move;
+  @include style-border($border-top-width: 2px, $border-bottom-width: 2px);
+}
+
+.recreation-item:hover .recreation-hover {
+  opacity: 1;
+}
+
+.recreation-item:hover h3 {
+  @include translate-3d(0%,0%,0%);
+}
+  
+.recreation-item:hover p {
+  @include translate-3d(0%,0%,0%);
+}
+  
+.recreation-item:hover a {
+  @include translate-3d(0%,50%,0%);
+}
+
+.recreation-hover {
+  @include absolute-range();
+  @include transition(0.4s);
+  text-align: center;
+  overflow: hidden;
+  background-color: $transparent-leading-color;
+  opacity: 0;
+}
+
+.recreation-hover-inner {
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  @include translate-3d(0%,-50%,0%);
+}
+
+.recreation-hover-inner > h3 {
+  color: $main-background-color;
+  @include header-style();
+  @include translate-3d(0%,-400%,0%);
+  @include transition(0.8s);
+  font-weight: bold;
+  line-height: 1em;
+  margin-bottom: 1em;
+}
+
+.recreation-hover-inner > p {
+  color: $main-background-color;
+  margin-bottom: 1.5em;
+  @include translate-3d(0%,-400%,0%);
+  @include transition(0.4s);
+  padding-left: 1.5em;
+  @include only-phone {
+    padding-left: 3em;
+  }
+  width: 95%;
+}
+
+.recreation-hover-inner > a {
+  display: inline-block;
+  @include size(12.5em, 12.5em);
+  @include border-radius-mix();
+  border: 1px solid $main-background-color;
+  text-align: center;
+  margin: 1px;
+  @include translate-3d(0%,400%,0%);
+  @include transition();
+}
+
+.recreation-hover-inner > a > i {
+  line-height: 1.75em;
+  font-size: 7em;
+  color: $main-background-color;
+  @include transition();
+}
+
+.recreation-hover-inner > a:hover {
+  background-color: $main-background-color;
+}
+
+.recreation-hover-inner > a:hover > i {
+  color: $leading-color;
+}
+
+.recreation-hover-inner .recreation-link {
+  margin-top: -10em;
+}
+
+.recreation-hover-inner a.recreation-link {
+  @include transition(1.2s);
+}
+
+.recreation-hover-inner a.recreation-link-right {
+  @include transition(0.7s);
+}
+
+.recreation-slider {
+   padding: 4em 0 0.5em 0;
+}
+
+/* Footer ============================================================================= */
+
+footer {
+  background-color: $footer-background-color;
+  color: $bright-color;
+  margin-top: 20em;
+  padding-top: 8em;
+}
+
+@include only-phone {
+  .footer-services, 
+  .footer-contact {
+    margin: 0 4em;
+  }
+}
+
+/* Footer services */
+
+@include phone {
+  .footer-services {
+    padding-bottom: 5em;
+  }
+}
+
+@include desktop {
+  .footer-services {
+    padding-bottom: 10em;
+  }
+}
+
+.footer-services > h1 {
+  color: $bright-leading-color;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.footer-services > ul > li {
+  color: $very-bright-color;
+  font-size: 2em;
+  line-height: 1.6em;
+  list-style-type: circle;
+  font-weight: normal;
+  padding-bottom: 1em;
+}
+
+.footer-services > ul > li > ul > li {
+  color: $bright-color;
+  list-style-type: none;
+  margin-left: 2em;
+}
+
+/* Footer contact */
+
+.footer-contact {
+  padding-bottom: 10em;
+}
+
+.footer-contact > h1 {
+  font-weight: bold;
+  color: $bright-leading-color;
+  margin-bottom: 1em;
+}
+
+.footer-contact > ul {
+  list-style-type: none;
+}
+
+.footer-contact > ul > li {
+  display: inline-block;
+  font-size: 2em;
+  line-height: 1.6em;
+}
+
+.footer-contact > ul > .info {
+  padding-left: 1em;
+  color: $very-bright-color;
+}
+
+/*Copyright section*/
+
+.copyright {
+  background-color: $copyright-background-color;
+  padding: 3em 0;
+}
+
+.copyright div h5 {
+  color: $bright-color;
+  font-size: 1.7em;
+  line-height: 1.7em;
+  padding-right: 1em;
+  text-align: center;
+}
+
+.copyright div h5 a,
+.copyright div h5 a:focus {
+  color: $bright-color;
+  text-decoration: none;
+  font-size: 1em;
+  line-height: 1em;
+}
+
+.copyright div h5 a:hover {
+  color: $very-bright-color;
+}
