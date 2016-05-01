@@ -1,0 +1,62 @@
+/* ====================================================================================
+ *  Project: Single Page Website
+ *  Author: Andrzej Kałowski
+ *  $id: main.scss
+ * ==================================================================================== */
+
+/* Fonts ============================================================================== */
+
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+@import "../bower_components/font-awesome/scss/font-awesome";
+
+/* Authored Dependencies ============================================================== */
+
+@import "setup/reset";
+@import "setup/variables";
+@import "setup/mixins";
+
+/* ====================================================================================
+   Bootstrap
+   ==================================================================================== */
+
+/* Vendor Dependencies */
+@import "vendor/bootstrap/variables";
+
+/* Core Bootstrap variables and mixins */
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+/* Reset and dependencies */
+@import "bootstrap/normalize";
+@import "bootstrap/print";
+
+/* Core CSS */
+@import "bootstrap/scaffolding";
+@import "bootstrap/type";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
+
+/* Components */
+@import "bootstrap/component-animations";
+@import "bootstrap/navs";
+@import "bootstrap/navbar";
+
+/* ====================================================================================
+   Custom Styling
+   ==================================================================================== */
+
+/* Common styles & layouts */
+@import "common/base";
+@import "common/typography";
+@import "common/layout";
+
+/* Components */
+@import "vendor/bx_slider/bxslider";
+@import "vendor/owl_carousel/carousel";
+@import "vendor/slicknav/slicknav";
