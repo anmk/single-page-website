@@ -1,0 +1,18 @@
+{
+  "generator-xh": {
+    "config": {
+      "projectName": "Single Page Website",
+      "useBranding": false,
+      "extension": "html",
+      "reloader": "BrowserSync",
+      "server": true,
+      "cssPreprocessor": "LIBSASS",
+      "ignoreDist": true,
+      "isWP": false,
+      "features": [
+        "useBootstrap",
+        "useModernizr"
+      ]
+    }
+  }
+}
